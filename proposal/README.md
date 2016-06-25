@@ -3,33 +3,31 @@
   Heroku Link
 
 ## Minimum Viable Product
-(project name) is a web application inspired by Quizlet, a popular classroom tool for foreign language studies. On (project name) users are able to memorize new vocabularies in interactive ways, and teachers are able to track students' progress. The app will be built using Ruby on Rails and React.js.
-
-I do not have 4 features listed as required, but I thought that types of features that I am considering might be adequate.
+(project name) is a web application inspired by Quizlet, a popular classroom tool for foreign language studies. On (project name) students can memorize new vocabularies in interactive ways, and teachers can manage their classes. The app will be built using Ruby on Rails and React.js.
 
 - [] Hosting on Heroku
 - [] New account creation, log-in, and guest log-in
 - [] Production README.md
 
 - [] Study Sets (vocabulary lists)
-  - [] Users can create new study sets
-  - [] Each set includes the following features:
-    - [] Flashcards
-    - [] Test
-  - [] The creator of the Study Set can edit and delete
+  - [] Users can create, edit, and study sets
   - [] Users can search for Study Sets created by other Users
+  - [] Each set includes the following features:
+    - [] List
+      - [] display the list of all the vocabulary pairs
+    - [] Flashcards
+      - [] show each vocabulary pair at a time
+    - [] Test
+      - [] Test is randomly generated based on the Study Set
+      - [] When User submits Test, the score is recorded in DB
+      - [] Users can see their past Test scores
 
-- [] Test
-  - [] Test is randomly generated based on the Study Set
-  - [] When User submits Test, the score is recorded in DB
-  - [] Users can see their past Test scores
 
 - [] Classes
-  - [] Users can create classes as Teacher
+  - [] Users can create, edit, and delete classes as Teacher
   - [] Users can search for Classes
-  - [] Users request to join class as Students, and Teacher approves the request.
-  - [] Teacher can add Study Sets to the class
-  - [] Teachers can see Student's Test scores of the Study Sets that belong to the Class.
+  - [] Only Teacher can add Study Sets to the Class
+  - [] Teachers can see Student's Test scores.
 
 - [] Users
   - [] When logged-in, users see in Navbar:
@@ -38,23 +36,38 @@ I do not have 4 features listed as required, but I thought that types of feature
     - [] Study Sets they previously studied
   - [] When logged-out, users can:
     - [] search for classes and study sets
-    - [] study Study Sets
-    - [] not create new Study Sets
-    - [] not enroll in classes
+    - [] use all Study Sets features
+    - [] not create new Study Sets or Classes
+    - [] not enroll in Classes
     - [] not record their Test scores
 
 
 - [] Styling and Navigation
   - [] Adequate Styling that resembles Quizlet
   - [] Smooth, bug-free navigation
-  - [] Users are warned when they navigate to invalid or deleted Study Set or Class
+    - [] Users are informed when they navigate to invalid or deleted Study Set or Class
   - [] Adequate and appropriate seeds to demonstrate the feature
+
 
 - [] Bonus
   - [] Users set their study sets as private
-  - [] Search study sets, users, and classes
-  - [] Game feature for study sets
+  - [] Users can upload pictures to Study Sets
+  - [] Users can record correct pronunciation to Study Sets
+  - [] Study Set can handle non-Latin characters
+  - [] Customizable Test
   - [] Users select profile pictures
+
+  - [] Enrollment Request and Approval
+    - [] Users request to enroll in Class as Students, and Teacher approves the request.
+    - [] Show pending enroll request on Navbar (if the User is Teacher)
+
+  - [] User Profile Page
+    - [] Users can edit their profile and share
+
+  - [] Game feature for study sets
+    - [] Interactive JavaScript game
+    - [] When logged in, Users can share their score
+    - [] Show highest scores
 
   - [] Folders
     - [] Users can create folders
