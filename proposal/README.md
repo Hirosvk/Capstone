@@ -12,9 +12,9 @@
 - [] Study Sets (vocabulary lists)
   - [] Users can create, edit, and study sets
   - [] Users can search for Study Sets created by other Users
-  - [] Each set includes the following features:
+  - [] Each Study Set includes the following features:
     - [] List
-      - [] display the list of all the vocabulary pairs
+      - [] display the list of all vocabulary pairs
     - [] Flashcards
       - [] show each vocabulary pair at a time
     - [] Test
@@ -50,19 +50,22 @@
 
 
 - [] Bonus
-  - [] Users set their study sets as private
-  - [] Users can upload pictures to Study Sets
-  - [] Users can record correct pronunciation to Study Sets
-  - [] Study Set can handle non-Latin characters
-  - [] Customizable Test
-  - [] Users select profile pictures
+  - [] Users can customizable Test
+
+  - [] Add more features to Study Sets
+    - [] Users set their study sets as private
+    - [] Study Set can handle non-Latin characters
+    - [] Users can upload pictures that accompany words
+    - [] Users can record correct pronunciation
 
   - [] Enrollment Request and Approval
     - [] Users request to enroll in Class as Students, and Teacher approves the request.
     - [] Show pending enroll request on Navbar (if the User is Teacher)
 
   - [] User Profile Page
-    - [] Users can edit their profile and share
+    - [] Users have profile page
+    - [] Users can add their info and share on their profile page
+    - [] Users select profile pictures
 
   - [] Game feature for study sets
     - [] Interactive JavaScript game
