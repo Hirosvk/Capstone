@@ -20,7 +20,7 @@
         * **SearchResults**
 
     * **StudySet**
-      * WordList
+      * List
       * **Flashcard**
       * **Test**
 
@@ -33,11 +33,20 @@ Log-in/Sign-up routes
 
 App
 * Component: App, Path: /
-  * Component: Index
-  * Component: Class, Path: /class/:id
-    * Component: ClassStudySets, Path: /class/:id/class_study_sets
-    * Component: Students, Path: /class/:id/students
-  * Component: WordList, Path: /study_set/:id
-    * Component: Flashcard, Path: /study_set/:id/Flashcard
-    * Component: Test, Path: /study_set/:id/test
-  * Component: SearchResult, Path: /search
+  * Component: Content
+
+    * Component: Dashboard
+      * Component: Navbar
+      * Component: Subcontent
+        * Component: Index
+        * Component: Class, Path: /class/:id
+          * Component: StudySetIndex
+          * Component: ClassStudySets, Path: /class/:id/class_study_sets
+          * Component: Students, Path: /class/:id/students
+
+        * Component: SearchResult, Path: /search_result
+
+    * Component: StudySet, Path: /study_set/:id
+      * Component: List
+      * Component: Flashcard, Path: /study_set/:id/Flashcard
+      * Component: Test, Path: /study_set/:id/test
