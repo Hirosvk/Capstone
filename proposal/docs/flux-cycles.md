@@ -1,134 +1,159 @@
-### Flux Cycles
+# Flux Cycles
 
 ## Stores
 * SearchResultStore
-* MyClassStore
-* MyStudySetStore
-* RecentActivityStore
-* StudySetIndexStore
+* NavbarStore
+* ClassStudySetStore
 * ProgressByStudySetStore
 * ProgressByStudentStore
 * WordStore
 * TestScoreStore
 
-## Search Cycle
-# Search
+
+## Actions
+* UserAction
+ * fetchNavbarRecords
+ * receiveNavbarRecords
+ * fetchTestScore
+ * receiveTestScore
+
+* ClassAction
+  * fetchStudySets
+  * receiveStudySets
+  * fetchProgressByStudySet
+  * receiveProgresByStudySet
+  * fetchProgressByStudent
+  * receiveProgressByStudent
+  * createNewClass
+    - [ ] pass callback from View, which display the status of the request
+    - [ ] calls fetchStudySets
+
+* StudySetAction
+  * fetchStudySet
+  * receiveStudySet
+  * createNewStudySet
+    - [ ] pass callback from View, which display the status of the request
+    - [ ] calls fetchStudySet
+
+* TestAction
+  * submitTest
+    - [ ] pass callback from View, which display the status of the request
+    - [ ] no receive action
+
+* SearchAction
+  * querySearchText
+  * receiveSearchResults
+
+# Search Cycle
+## Search
   state: search text
   Make API requests for matching study sets/classes
     --> store the response
       --> emit change to SearchResult
-# SearchResults
+## SearchResults
   on mount, add listener to SearchResultStore
   receives search results and pass each one as prop
-# SearchResultItem
+## SearchResultItem
   props: result item
   render link to class/study Set
 
 
 
-## Navbar Cycle
+# Navbar Cycle
 
-# Navbar
+## Navbar
   On mount, fetch Users' classes and study set data
   --> store
     --> emit change to MyClassIndex and MyStudySetIndex
 
-# MyClassesIndex
+## MyClassesIndex
   state: my classes data
   On mount, add listener to MyClassIndexStore
   receives data from MyClassStore
   render links to the classes
 
-# MyStudySetIndex
+## MyStudySetIndex
   state: my study sets data
   On mount, add listener to MyStudySetIndex
   receives data from MyStudySetStore
   render links to the Study Sets
 
 
-## TestScore Cycle
+# TestScore Cycle
 
-# TestScores
+## TestScores
   on mount, fetch users' test scores
   add listener to UserHistoryStore
   --> store
     --> emit change --> render
 
 
-## Index Cycle
-# Index
-  on mount, fetch recent activities
-  --> store
-    --> emit change to Index
-
-
-## New Study Set Form Cycle
-# NewStudySetForm
+# New Study Set Form Cycle
+## NewStudySetForm
   state: form content
   --> create new Study Set
     --> receive single study set --> store in WordStore
-    --> redirect to the Study Set
+    --> redirect to the new Study Set
 
-## New Class Form Cycle
-# NewClassForm
+# New Class Form Cycle
+## NewClassForm
   state: form content
   --> create new Study Set
     --> receive single study set --> store in WordStore
-    --> redirect to the Study Set
+    --> redirect to the new Class
 
 
 
-## Class Cycle
-# Class
+# Class Cycles
 
-# StudySetIndex
+## StudySetIndex
   on mount, fetch all study sets of the class
   --> store
     --> emit change StudySetIndex receives the study sets
   add listener to StudySetIndexStore
-  pass study sets as props to StudySetIndex
+  pass study sets as props to StudySetIndexItem
 
-# StudySetIndexItem
+## StudySetIndexItem
   props: Study Set
   render link to the Study Set
 
 
-## ProgressByStudySet Cycle
-# ProgressByStudySet
+# ProgressByStudySet Cycle
+## ProgressByStudySet
   state: ProgressByStudySetStore.all()
   on mount, fetch all progress data of each study set
   add listener to ProgressByStudySetStore
 
   --> store
    -> emit change --> receive progress data --> pass to ProgressByStudySetItem as prop
-# ProgressByStudySetItem
+## ProgressByStudySetItem
   props: progress data
   render prop data
 
-## ProgressByStudent Cycle
-# ProgressByStudent
+# ProgressByStudent Cycle
+## ProgressByStudent
   state: ProgressByStudentStore.all()
   on mount, fetch all progress data of each student
   add listener to ProgressByStudentStore
 
   --> store
    -> emit change --> receive progress data --> pass to ProgressByStudentItem as prop
-# ProgressByStudentItem
+## ProgressByStudentItem
   props: progress data
   render prop data
 
 
-## StudySet Cycle
-# Study Set
+# StudySet Cycle
+## Study Set
   state: words
   on mount, fetch all the words
   add listener to WordStore
   -->
-# List
+## List
   receive words as props
   render list
 
-# Flashcard
+## Flashcard
   receive words as props
   render each word
 

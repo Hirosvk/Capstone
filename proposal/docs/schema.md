@@ -9,10 +9,9 @@ session_token   | string    | null: false, unique: true
 
 - user has many
   - sets_created
-  - sets_studied
   - test_taken
-  - created_classes
-  - enrolled_classes
+  - created_klasses
+  - enrolled_klasses
 
 ## study_sets
 column names    | Data Type | Details
@@ -29,7 +28,7 @@ language_id     | integer   | null: false, indexed
   - study_set_words
   - students
   - test_records
-  - classes
+  - klasses
 
 ## study_set_words
 column names    | Data Type | Details
@@ -54,12 +53,12 @@ score           | integer   | null: false, (in %, btw 0 and 100)
   - user
   - study_set
 
-## classes
+## klasses
 column names    | Data Type | Details
 ----------------|-----------|---------------------
 id              | integer   |
 language_id     | integer   | null: false, indexed
-class_name      | string    | null: false
+klass_name      | string    | null: false
 description     | text      |
 teacher_id      | integer   | null: false, indexed
 
@@ -70,26 +69,26 @@ teacher_id      | integer   | null: false, indexed
   - students
   - study_sets
 
-## class_set_joins
+## klass_set_joins
 column names    | Data Type | Details
 ----------------|-----------|---------------------
 id              | integer   |
-class_id        | integer   | null: false,
-study_set_id    | integer   | null: false, class/set unique pair
+klass_id        | integer   | null: false,
+study_set_id    | integer   | null: false, klass/set unique pair
 
 - belongs to
   - study_set
-  - class
+  - klass
 
-## class_student_joins
+## klass_student_joins
 column names    | Data Type | Details
 ----------------|-----------|---------------------
 id              | integer   |
-class_id        | integer   | null: false
-student_id      | integer   | null: false, class/student unique pair
+klass_id        | integer   | null: false
+student_id      | integer   | null: false, klass/student unique pair
 
 - belongs to
-  - class
+  - klass
   - student(user)
 
 ## languages
@@ -99,5 +98,5 @@ id              | integer   |
 language        | string    | null: false
 
 - language has many
-  - classes
+  - klasses
   - study_sets

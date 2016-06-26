@@ -10,7 +10,7 @@
 - [ ] Production README.md
 
 - [ ] Study Sets (vocabulary lists)
-  - [ ] Users can create, edit, and study sets
+  - [ ] Users can create, edit, and delete study sets
   - [ ] Users can search for Study Sets created by other Users
   - [ ] Each Study Set includes the following features:
     - [ ] List
@@ -52,6 +52,8 @@
 
 - [ ] **Bonus**
   - [ ] Users can customizable Test
+
+  - [ ] Recent Activities page
 
   - [ ] Add more features to Study Sets
     - [ ] Users set their study sets as private
