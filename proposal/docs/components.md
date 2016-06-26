@@ -1,20 +1,28 @@
 ## React Components Hierarchy
 
 * **App**
-  * Navbar
-  * Header with search
-    * Index
-    * **Class**
-      * StudySetIndex
-        * StudySetIndexItem
-      * **ClassStudySets** (to see class's progress by study set, only if the user is the Teacher)
-      * **Students** (to see class's progress by student, only if the user is the Teacher)
+  * Header
+    * Search
+
+  * Content
+    * Dashboard
+      * Navbar
+        * MyClassesIndex (only when logged-in: links to classes the user created/enrolled, form to create new study set)
+        * MyStudySetIndex (only when logged-in: links to study sets the user created/studied, form to create new class)
+        * Footer (dummy company info & links)
+      * SubContent
+        * Index
+        * **Class**
+          * StudySetIndex
+            * StudySetIndexItem
+          * **ClassStudySets** (to see class's progress by study set, only if the user is the Teacher)
+          * **Students** (to see class's progress by student, only if the user is the Teacher)
+        * **SearchResults**
+
     * **StudySet**
-      * StudySetDetail
-      * **List**
+      * WordList
       * **Flashcard**
       * **Test**
-    * **SearchResults**
 
 
 ## Routes
@@ -24,13 +32,12 @@ Log-in/Sign-up routes
 * /user
 
 App
-* Component: App, path /
+* Component: App, Path: /
   * Component: Index
-  * Component: Class, path /class/:id
-    * Component: ClassStudySets, path /class/:id/class_study_sets
-    * Component: Students, path /class/:id/students
-  * Component: StudySet, path /study_set/:id
-    * Component: Flashcard, path /study_set/:id/flashcard
-    * Component: List, path /study_set/:id/list
-    * Component: Test, path /study_set/:id/test
-  * Component: SearchResult, path/search
+  * Component: Class, Path: /class/:id
+    * Component: ClassStudySets, Path: /class/:id/class_study_sets
+    * Component: Students, Path: /class/:id/students
+  * Component: WordList, Path: /study_set/:id
+    * Component: Flashcard, Path: /study_set/:id/Flashcard
+    * Component: Test, Path: /study_set/:id/test
+  * Component: SearchResult, Path: /search
