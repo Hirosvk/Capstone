@@ -14,9 +14,7 @@
   - [ ] Users can search for Study Sets created by other Users
   - [ ] Each Study Set includes the following features:
     - [ ] List
-      - [ ] display the list of all vocabulary pairs
-    - [ ] Flashcards
-      - [ ] show each vocabulary pair at a time
+      - [ ] display the list of all vocabulary pair
     - [ ] Test
       - [ ] Test is randomly generated based on the Study Set
       - [ ] When User submits Test, the score is recorded in DB
@@ -52,8 +50,11 @@
 
 - [ ] **Bonus**
   - [ ] Users can customizable Test
+  - [ ] Users can edit their classes
+  - [ ] Users can edit their study sets
 
   - [ ] Recent Activities page
+  - [ ] App tracks which Study Sets the user has studied
 
   - [ ] Add more features to Study Sets
     - [ ] Users set their study sets as private
@@ -69,6 +70,9 @@
     - [ ] Users have profile page
     - [ ] Users can add their info and share on their profile page
     - [ ] Users select profile pictures
+
+  - [ ] Flashcard feature for Study Sets
+    - [ ] Users can study one pair vocabularies at a time
 
   - [ ] Game feature for study sets
     - [ ] Interactive JavaScript game

@@ -13,8 +13,8 @@
         * Footer
       * SubContent
         * Index
-        * **StudySetForm**
-        * **ClassForm**
+        * **NewStudySetForm**
+        * **NewClassForm**
         * **TestScores**
           * TestScoreItem
         * **Class**
@@ -29,7 +29,6 @@
 
     * **StudySet**
       * List
-      * **Flashcard**
       * **Test**
 
 
@@ -47,8 +46,8 @@ App
       * Component: Navbar
       * Component: Subcontent
         * Component: Index
-        * Component: StudySetForm, Path: /create_study_set (or edit_study_set/:id)
-        * Component: ClassForm, Path: /create_class (or edit_class/:id)
+        * Component: NewStudySetForm, Path: /create_study_set
+        * Component: NewClassForm, Path: /create_class
         * Component: TestScores, Path: /test_scores
         * Component: Class, Path: /class/:id
           * Component: ClassStudySetIndex
@@ -59,7 +58,6 @@ App
 
     * Component: StudySet, Path: /study_set/:id
       * Component: List
-      * Component: Flashcard, Path: /study_set/:id/Flashcard
       * Component: Test, Path: /study_set/:id/test
 
 
@@ -73,14 +71,14 @@ App
   * Content
     * Dashboard
       * Navbar
-        * MyCratedClassesIndex
+        * MyCreatedClassesIndex
           - [ ] links: classes the user created
-          - [ ] Link: create new study set form
+          - [ ] Link: NewClassForm
         * MyEnrolledClassesIndex
           - [ ] links: classes enrolled
         * MyStudySetIndex
           - [ ] links: study sets the user created
-          - [ ] link: create new class form
+          - [ ] link: NewStudySetForm
         - [ ] Link to TestScores
         * Footer
           - [ ] dummy company info & links
@@ -88,12 +86,10 @@ App
       * SubContent
         * Index
           - [ ] Welcome message and navigation tips
-        * StudySetForm
-          - [ ] page header changes based on hashHistory (Create New/Edit)
+        * NewStudySetForm
           - [ ] delete button
           - [ ] can add the set to classes
-        * ClassForm
-          - [ ] page header changes based on hashHistory (Create New/Edit)
+        * NewClassForm
           - [ ] delete button
           - [ ] can add existing study sets
         * TestScores
@@ -102,7 +98,7 @@ App
         * Class
           - [ ] class title banner
           - [ ] Link to create new study set for the class (if current_user == teacher)
-          - [ ] Link to edit the class (if current_user == teacher)
+          - [ ] toggle button to enroll in the class (if user is not the student or teacher)
           * ClassStudySetIndex
             * ClassStudySetIndexItem
               - [ ] render link to the study set
@@ -118,9 +114,7 @@ App
 
     * StudySet
       - [ ] Study Set title banner
-      - [ ] Link to edit the study set (if current_user == creator)
       - [ ] does not show Navbar (original Quizlet is designed this way)
       - [ ] Back to Index link
       * List
-      * Flashcard
       * Test
