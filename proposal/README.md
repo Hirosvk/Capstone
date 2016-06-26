@@ -10,7 +10,7 @@
 - [ ] Production README.md
 
 - [ ] Study Sets (vocabulary lists)
-  - [ ] Users can create, edit, and delete study sets
+  - [ ] Users can create, and delete study sets
   - [ ] Users can search for Study Sets created by other Users
   - [ ] Each Study Set includes the following features:
     - [ ] List
@@ -22,7 +22,7 @@
 
 
 - [ ] Classes
-  - [ ] Users can create, edit, and delete classes as Teacher
+  - [ ] Users can create and delete classes as Teacher
   - [ ] Users can search for Classes
   - [ ] Only Teacher can add Study Sets to the Class
   - [ ] Teachers can see Student's Test scores.
@@ -49,9 +49,13 @@
 
 
 - [ ] **Bonus**
-  - [ ] Users can customizable Test
   - [ ] Users can edit their classes
   - [ ] Users can edit their study sets
+
+  - [ ] Flashcard feature for Study Sets
+    - [ ] Users can study one pair vocabularies at a time
+
+  - [ ] Users can customizable Test
 
   - [ ] Recent Activities page
   - [ ] App tracks which Study Sets the user has studied
@@ -66,18 +70,16 @@
     - [ ] Users request to enroll in Class as Students, and Teacher approves the request.
     - [ ] Show pending enroll request on Navbar (if the User is Teacher)
 
+  - [ ] Game feature for study sets
+    - [ ] Interactive JavaScript game
+    - [ ] When logged in, Users can share their score
+    - [ ] Show highest scores
+
   - [ ] User Profile Page
     - [ ] Users have profile page
     - [ ] Users can add their info and share on their profile page
     - [ ] Users select profile pictures
 
-  - [ ] Flashcard feature for Study Sets
-    - [ ] Users can study one pair vocabularies at a time
-
-  - [ ] Game feature for study sets
-    - [ ] Interactive JavaScript game
-    - [ ] When logged in, Users can share their score
-    - [ ] Show highest scores
 
 
 

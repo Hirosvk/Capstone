@@ -34,11 +34,6 @@
 
 ## Routes
 
-Log-in/Sign-up routes
-* /session
-* /user
-
-App
 * Component: App, Path: /
   * Component: Content
 

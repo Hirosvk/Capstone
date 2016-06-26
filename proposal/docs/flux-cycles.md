@@ -1,6 +1,7 @@
 # Stores
 * SearchResultStore
 * NavbarStore
+* ClassStore
 * ClassStudySetStore
 * ProgressByStudySetStore
 * ProgressByStudentStore
@@ -16,13 +17,20 @@
  * receiveTestScore
 
 * ClassAction
+  * fetchSingleClass
+  * receiveSingleClass
   * fetchStudySets
   * receiveStudySets
   * fetchProgressByStudySet
   * receiveProgresByStudySet
   * fetchProgressByStudent
   * receiveProgressByStudent
-  * toggleEnrollment
+  * deleteEnrollment
+    - [ ] DELETE request
+    - [ ] calls fetchStudySets
+    - [ ] calls UserAction.fetchNavbarRecords
+  * createEnrollment
+    - [ ] POST request
     - [ ] calls fetchStudySets
     - [ ] calls UserAction.fetchNavbarRecords
   * createNewClass
@@ -180,21 +188,31 @@
   generate test
 
 
-### Test Submission Cycle
+## Test Submission Cycle
   * Test submit
     * Test.gradeTest
       * Test.showScore
       * TestAction.submitTest (no Dispatcher action)
         * callback: alert the request status
-## Test
+### Test
   * componentDidMount:
     * add event listener to test form on submit
   * pass callback to TestAction.submitTest
 
 
+# Class
+  * state: classStore
+  * componentDidMount:
+    * ClassAction.fetchSingleClass
+    * Add Listener to ClassStore
+  * add event listener on enrollment button
+    * callback: toggleEnrollment
+      * current_user is enrolled in class --> ClassAction.deleteEnrollment
+      * current_user is not enrolled in class --> ClassAction.createEnrollment
 
 
-## Class Cycles
+
+## ClassStudyIndex Cycles
   * ClassStudySetIndex mounts
   * ClassAction.fetchStudySets
   * ClassAction.receiveStudySets
@@ -212,8 +230,6 @@
   props: StudySet item
   render link to the Study Set
 
-
-## ProgressByStudet Cycles
 
 ## ProgressByStudySet Cycle
   * same flow as ClassStudySet Cycle

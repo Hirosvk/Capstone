@@ -80,7 +80,7 @@ study_set_id    | integer   | null: false, klass/set unique pair
   - study_set
   - klass
 
-## klass_student_joins
+## enrollments
 column names    | Data Type | Details
 ----------------|-----------|---------------------
 id              | integer   |
