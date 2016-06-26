@@ -39,17 +39,18 @@
     - [ ] use all Study Sets features
     - [ ] not create new Study Sets or Classes
     - [ ] not enroll in Classes
-    - [ ] not record their Test scores
+    - [ ] not save their Test scores or study history
 
 
 - [ ] Styling and Navigation
   - [ ] Adequate Styling that resembles Quizlet
   - [ ] Smooth, bug-free navigation
     - [ ] Users are informed when they navigate to invalid or deleted Study Set or Class
+    - [ ] Users are informed when their navigation is unauthorized
   - [ ] Adequate and appropriate seeds to demonstrate the feature
 
 
-- [ ] Bonus
+- [ ] **Bonus**
   - [ ] Users can customizable Test
 
   - [ ] Add more features to Study Sets
@@ -71,11 +72,6 @@
     - [ ] Interactive JavaScript game
     - [ ] When logged in, Users can share their score
     - [ ] Show highest scores
-
-  - [ ] Folders
-    - [ ] Users can create folders
-    - [ ] Users can add their Study Sets to their folders
-    - [ ] Users can add other users Study Sets to their folders
 
 
 

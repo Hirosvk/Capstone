@@ -10,7 +10,7 @@ session_token   | string    | null: false, unique: true
 - user has many
   - sets_created
   - sets_studied
-  - test_taken(test_completed, test_in_progress)
+  - test_taken
   - created_classes
   - enrolled_classes
 
@@ -36,11 +36,12 @@ language_id     | integer   | null: false, indexed
 column names    | Data Type | Details
 ----------------|-----------|---------------------
 id              | integer   |   
-language_id     | integer   | null: false, indexed
+study_set_id    | integer   | null: false, indexed
 word_english    | string    | null: false
 word_foreign    | string    | null: false
 
-- study_set_word belongs to study_set
+- study_set_word belongs to
+  - study_set
 
 
 ## study_records
@@ -63,7 +64,6 @@ id              | integer   |
 user_id         | integer   | null: false, indexed
 study_set_id    | integer   | null: false, indexed
 score           | integer   | null: false, (in %, btw 0 and 100)
-completed       | boolean   | default: false
 
 - test_record belongs to
   - user

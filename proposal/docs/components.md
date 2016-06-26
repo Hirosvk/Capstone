@@ -7,17 +7,23 @@
   * Content
     * Dashboard
       * Navbar
-        * MyClassesIndex (only when logged-in: links to classes the user created/enrolled, form to create new study set)
-        * MyStudySetIndex (only when logged-in: links to study sets the user created/studied, form to create new class)
+        * MyClassesIndex (links to classes the user created/enrolled and form to create new study set)
+        * MyStudySetIndex (links to study sets the user created/studied, form to create new class)
         * Footer (dummy company info & links)
       * SubContent
         * Index
+        * **NewStudySetForm**
+        * **NewClassForm**
+        * **TestScores**
         * **Class**
-          * StudySetIndex
+          * StudySetIndex (include link to new study set if user is the teacher)
             * StudySetIndexItem
-          * **ClassStudySets** (to see class's progress by study set, only if the user is the Teacher)
-          * **Students** (to see class's progress by student, only if the user is the Teacher)
+          * **ProgressByStudySet** (only if the user is the Teacher)
+            * ProgressByStudySetItem
+          * **ProgressByStudent** (only if the user is the Teacher)
+            * ProgressByStudentItem
         * **SearchResults**
+          * SearchResultItem
 
     * **StudySet**
       * List
@@ -39,14 +45,57 @@ App
       * Component: Navbar
       * Component: Subcontent
         * Component: Index
+        * Component: NewStudySetForm, Path: /new_study_set
+        * Component: NewClassForm, Path: /new_class
+        * Component: TestScores, Path: /test_scores
         * Component: Class, Path: /class/:id
           * Component: StudySetIndex
-          * Component: ClassStudySets, Path: /class/:id/class_study_sets
-          * Component: Students, Path: /class/:id/students
+            * Component: StudySetIndexItem
+          * Component: ProgressByStudySet, Path: /class/:id/by_study_sets
+            * Component: ProgressByStudySetItem
+          * Component: ProgressByStudent, Path: /class/:id/by_students
+            * Component: ProgressByStudentItem
 
-        * Component: SearchResult, Path: /search_result
+        * Component: SearchResults, Path: /search_results
+          * Component: SearchResultItem
 
     * Component: StudySet, Path: /study_set/:id
       * Component: List
       * Component: Flashcard, Path: /study_set/:id/Flashcard
       * Component: Test, Path: /study_set/:id/test
+
+
+* **App**
+  * Header
+    * Search
+
+  * Content
+    * Dashboard
+      * Navbar
+        * MyClassesIndex
+          [ ] links: classes the user created
+          [ ] links: enrolled
+          [ ] form to create new study set
+        * MyStudySetIndex
+
+         (links to study sets the user created/studied, form to create new class)
+        * Footer (dummy company info & links)
+      * SubContent
+        * Index
+        * **NewStudySetForm**
+        * **NewClassForm**
+        * **TestScores**
+        * **Class**
+          * StudySetIndex (include link to new study set if user is the teacher)
+            * StudySetIndexItem
+          * **ProgressByStudySet** (only if the user is the Teacher)
+            * ProgressByStudySetItem
+          * **ProgressByStudent** (only if the user is the Teacher)
+            * ProgressByStudentItem
+        * **SearchResults**
+          * SearchResultItem
+
+    * **StudySet**
+      * List
+      * **Flashcard**
+      * **Test**
