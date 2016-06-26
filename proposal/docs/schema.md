@@ -22,7 +22,6 @@ study_set_name  | string    | null: false
 creator_id      | integer   | null: false, indexed
 language_id     | integer   | null: false, indexed
 
-
 - study_set belongs to
   - creator(user)
   - language
@@ -41,20 +40,6 @@ word_english    | string    | null: false
 word_foreign    | string    | null: false
 
 - study_set_word belongs to
-  - study_set
-
-
-## study_records
-When logged-in users use any feature of the study set, it is recorded on this table.
-
-column names    | Data Type | Details
-----------------|-----------|---------------------
-id              | integer   |
-user_id         | integer   | null: false, indexed
-study_set_id    | integer   | null: false, indexed
-
-- study_record belongs to
-  - user
   - study_set
 
 ## test_records
@@ -106,7 +91,6 @@ student_id      | integer   | null: false, class/student unique pair
 - belongs to
   - class
   - student(user)
-
 
 ## languages
 column names    | Data Type | Details

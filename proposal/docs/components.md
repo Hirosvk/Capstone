@@ -7,16 +7,17 @@
   * Content
     * Dashboard
       * Navbar
-        * MyClassesIndex (links to classes the user created/enrolled and form to create new study set)
-        * MyStudySetIndex (links to study sets the user created/studied, form to create new class)
-        * Footer (dummy company info & links)
+        * MyClassesIndex
+        * MyStudySetIndex
+        * Footer
       * SubContent
         * Index
-        * **NewStudySetForm**
-        * **NewClassForm**
+        * **StudySetForm**
+        * **ClassForm**
         * **TestScores**
+          * TestScoreItem
         * **Class**
-          * StudySetIndex (include link to new study set if user is the teacher)
+          * StudySetIndex
             * StudySetIndexItem
           * **ProgressByStudySet** (only if the user is the Teacher)
             * ProgressByStudySetItem
@@ -42,22 +43,17 @@ App
   * Component: Content
 
     * Component: Dashboard
-      * Component: Navbar
       * Component: Subcontent
         * Component: Index
-        * Component: NewStudySetForm, Path: /new_study_set
-        * Component: NewClassForm, Path: /new_class
+        * Component: StudySetForm, Path: /create_study_set (or edit_study_set/:id)
+        * Component: ClassForm, Path: /create_class (or edit_class/:id)
         * Component: TestScores, Path: /test_scores
         * Component: Class, Path: /class/:id
           * Component: StudySetIndex
-            * Component: StudySetIndexItem
           * Component: ProgressByStudySet, Path: /class/:id/by_study_sets
-            * Component: ProgressByStudySetItem
           * Component: ProgressByStudent, Path: /class/:id/by_students
-            * Component: ProgressByStudentItem
 
         * Component: SearchResults, Path: /search_results
-          * Component: SearchResultItem
 
     * Component: StudySet, Path: /study_set/:id
       * Component: List
@@ -65,37 +61,59 @@ App
       * Component: Test, Path: /study_set/:id/test
 
 
-* **App**
+## Contents
+* App
   * Header
     * Search
+    [ ] Logo
+    [ ] display user's username
 
   * Content
     * Dashboard
       * Navbar
         * MyClassesIndex
           [ ] links: classes the user created
-          [ ] links: enrolled
-          [ ] form to create new study set
+          [ ] links: classes enrolled
+          [ ] Link: create new study set form
         * MyStudySetIndex
+          [ ] links: study sets the user created
+          [ ] link: create new class form
+        [ ] Link to TestScores
+        * Footer
+          [ ] dummy company info & links
 
-         (links to study sets the user created/studied, form to create new class)
-        * Footer (dummy company info & links)
       * SubContent
         * Index
-        * **NewStudySetForm**
-        * **NewClassForm**
-        * **TestScores**
-        * **Class**
-          * StudySetIndex (include link to new study set if user is the teacher)
+          [ ] Recent activities by the users
+        * StudySetForm
+          [ ] page header changes (Create New/Edit)
+          [ ] can add the set to classes
+        * ClassForm
+          [ ] page header changes (Create New/Edit)
+          [ ] can add existing study sets
+        * TestScores
+          * TestScoreItem
+            [ ] render test score and link to the study set
+        * Class
+          [ ] class title bannar
+          [ ] Link to create new study set for the class (if current_user == teacher)
+          [ ] Link to edit the class (if current_user == teacher)
+          * StudySetIndex
             * StudySetIndexItem
-          * **ProgressByStudySet** (only if the user is the Teacher)
+              [ ] render link to the study set
+          * ProgressByStudySet (only if the user is the Teacher)
             * ProgressByStudySetItem
-          * **ProgressByStudent** (only if the user is the Teacher)
+              [ ] render data and link to the study set
+          * ProgressByStudent (only if the user is the Teacher)
             * ProgressByStudentItem
-        * **SearchResults**
+              [ ] render <li>
+        * SearchResults
           * SearchResultItem
+            [ ] render link to the class/study set
 
-    * **StudySet**
+    * StudySet
+      [ ] Study Set title bannar
+      [ ] Link to edit the study set (if current_user == creator)
       * List
-      * **Flashcard**
-      * **Test**
+      * Flashcard
+      * Test
