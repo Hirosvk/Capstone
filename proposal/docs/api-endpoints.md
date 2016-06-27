@@ -34,14 +34,18 @@
 ## klasses
 ### GET /api/klasses/;id
   * return klass info (id, name, description, teacher's username, created_at, current_user's enrollment status, and enrollment_id)
+
 ### GET /api/klasses/:id/study_sets
   * return Study Sets of the Klass (name, id)
+
 ### GET /api/klasses/:id/by_study_set
   * return test scores grouped by study set
     * require current_user == teacher
+
 ### GET /api/klasses/:id/by_student
   * return test scores grouped by student
     * require current_user == teacher
+    
 ### POST /api/klasses/new
   * create new klass with current_user.id as teacher_id
   * params: klass_name, description, class_ids

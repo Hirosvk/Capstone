@@ -43,9 +43,8 @@
     - [ ] calls fetchStudySet
     - [ ] calls UserAction.fetchNavbarRecords
   * deleteStudySet
-    - [ ] calls fetchStudySet
-    - [ ] calls UserAction.fetchNavbarRecords    
-
+    - [ ] takes callback from StudySetAction view
+    - [ ] calls UserAction.fetchNavbarRecords
 
 * TestAction
   * submitTest

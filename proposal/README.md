@@ -2,7 +2,7 @@
 
   Heroku Link
 
-## Minimum Viable Product
+# Minimum Viable Product
 (project name) is a web application inspired by Quizlet, a popular classroom tool for foreign language studies. On (project name) students can memorize new vocabularies in interactive ways, and teachers can manage their classes. The app will be built using Ruby on Rails and React.js.
 
 - [ ] Hosting on Heroku
@@ -86,7 +86,7 @@
 
 
 
-## Design Docs
+# Design Docs
   * [View Wireframes][views]
   * [React Components][components]
   * [Flux Cycles][flux-cycles]
@@ -99,4 +99,83 @@
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
 
-## Implementation Timeline
+# Implementation Timeline
+
+## Phase 1: Backend Setup and Frontend User Authentication (1day, W7D2)
+* npm, webpack, bundlers, .gitignore setup
+* user model
+* session controller
+* user controller
+* authentication
+* sign-up/log-in pages
+* static pages
+* basic header
+* heroku setup
+
+## Phase 2: Basic Models: study_sets & study_set_word (1day, W7D3)
+* study_set model
+* study_set_word model
+* validations
+* setup JSON API for study_set
+* study_set#create
+* study_set#delete
+* study_set#show
+
+## Phase 3: Basic React/Flux components (1day, W7D4)
+* StudySet & StudySetList React component
+* Basic Router setup
+* API Util: ajax GET, POST, DELETE request
+* StudySetAction
+* Dispatcher
+* StudySetStore
+
+* StudySetForm component (w/o ClassOptionBox)
+
+
+## Phase 4: Add Class feature (2day, W7D6)
+* build models: klasses, klass_set_joins
+* klass-set associations
+* KlassesController: Basic API endpoints for klass
+  * create with study_set_ids
+  * delete
+  * show
+  * study_sets
+* add class_ids in study_set#create
+
+* React Components: Class, ClassStudySetIndex, ClassStudySetIndexItem
+* ClassAction
+* ClassStore
+* ClassStudySetStore
+* ClassForm Component
+
+
+## Phase 5: Enrollment (.5day)
+* enrollment
+  * model & migration
+  * API endpoints & server routes
+  * toggle button on Class page
+
+## Phase 6: Navbar (1.5day w7d7)
+* backend setup
+  * user.klasses_created, user.klasses_enrolled, user.study_sets_created
+  * API endpoints and server router setup
+* Navbar React Component
+* UserAction
+* NavbarStore
+* ClassOptionBox for StudySetForm
+
+## Phase 7: Basic Styling (1day w8d1)
+* CSS Styling
+* footer
+
+## Phase 8: Test feature (2day w8d3)
+* test_record model
+* Test React component
+* Test Scores
+* ProgressByStudent & ProgressByStudySet
+
+## Phase 9: Search (0.5 day)
+
+## Phase 10: Complete Styling (1.5day w8d4)
+
+## Phase 11: Bonus
