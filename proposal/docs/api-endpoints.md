@@ -6,15 +6,18 @@
 ## user
 ### GET /user/new
   * sign-in page
+
 ### POST /user
   * create new user
 
 ## session
 ### GET /session/new
   * log-in page
+
 ### POST /session/
   * log-in
   * redirects to GET /
+  
 ### DELETE /session/
   * log-out
   * redirects to GET /
@@ -28,6 +31,7 @@
   * klasses enrolled by the current_user
   * klasses created by the current_user
   * study_sets created by the current_user
+
 ### GET /api/user/test_scores
 * return test scores of the current_user
 
@@ -45,7 +49,7 @@
 ### GET /api/klasses/:id/by_student
   * return test scores grouped by student
     * require current_user == teacher
-    
+
 ### POST /api/klasses/new
   * create new klass with current_user.id as teacher_id
   * params: klass_name, description, class_ids
@@ -55,6 +59,7 @@
 ### DELETE /api/enrollments/:id
   * delete a row from enrollments table
     * require log-in && current_user != teacher
+
 ### POST /api/enrollments/
   * create new row in enrollments table with current_user_id
   * params: class_id
@@ -64,12 +69,15 @@
 ## study_sets
 ### GET /api/study_sets/
   * return StudySets created by all users
+
 ### GET /api/study_sets/:id
   * return single Study Set (name, creator's username, created_at, updated_at)
   * return all the words of the Study Set in a nested hash
+
 ### DELETE /api/study_sets/:id
   * delete the study set
     * require current_user == creator
+
 ### POST /api/study_sets/
   * create new study_set with current_user.id as creator_id
   * create new words

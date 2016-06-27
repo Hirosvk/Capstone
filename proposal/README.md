@@ -89,12 +89,14 @@
 # Design Docs
   * [View Wireframes][views]
   * [React Components][components]
+  * [Component Details][component_details]
   * [Flux Cycles][flux-cycles]
   * [API endpoints][api-endpoints]
   * [DB SChema][schema]
 
 [views]: docs/views.md
 [components]: docs/components.md
+[component_details]: docs/component_details.md
 [flux-cycles]: docs/flux-cycles.md
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
@@ -168,14 +170,17 @@
 * CSS Styling
 * footer
 
-## Phase 8: Test feature (2day w8d3)
+## Phase 8: add Test feature (2day w8d3)
 * test_record model
 * Test React component
 * Test Scores
 * ProgressByStudent & ProgressByStudySet
 
-## Phase 9: Search (0.5 day)
+## Phase 9: add Search feature (0.5 day)
 
-## Phase 10: Complete Styling (1.5day w8d4)
+## Phase 10: Final Touch (1.5day w8d4)
+* thorough styling
+* seed data
+* check for bugs
 
 ## Phase 11: Bonus

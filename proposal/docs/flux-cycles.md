@@ -58,7 +58,7 @@
 
 # Flux Cycles
 * **This section is incomplete**
-* see [component_details]
+* see also [component_details]
 [component_details]: component_details.md
 
 ## Search Cycle
