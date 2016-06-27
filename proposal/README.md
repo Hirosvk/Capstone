@@ -103,7 +103,7 @@
 
 # Implementation Timeline
 
-## Phase 1: Backend Setup and Frontend User Authentication (1day, W7D2)
+## Phase 1: Backend Setup and Frontend User Authentication (1day, W8D2)
 * npm, webpack, bundlers, .gitignore setup
 * user model
 * session controller
@@ -114,7 +114,7 @@
 * basic header
 * heroku setup
 
-## Phase 2: Basic Models: study_sets & study_set_word (1day, W7D3)
+## Phase 2: Basic Models: study_sets & study_set_word (1day, W8D3)
 * study_set model
 * study_set_word model
 * validations
@@ -123,7 +123,7 @@
 * study_set#delete
 * study_set#show
 
-## Phase 3: Basic React/Flux components (1day, W7D4)
+## Phase 3: Basic React/Flux components (1day, W8D4)
 * StudySet & StudySetList React component
 * Basic Router setup
 * API Util: ajax GET, POST, DELETE request
@@ -134,7 +134,7 @@
 * StudySetForm component (w/o ClassOptionBox)
 
 
-## Phase 4: Add Class feature (2day, W7D6)
+## Phase 4: Add Class feature (2day, W8D6)
 * build models: klasses, klass_set_joins
 * klass-set associations
 * KlassesController: Basic API endpoints for klass
@@ -157,7 +157,7 @@
   * API endpoints & server routes
   * toggle button on Class page
 
-## Phase 6: Navbar (1.5day w7d7)
+## Phase 6: Navbar (1.5day w9d7)
 * backend setup
   * user.klasses_created, user.klasses_enrolled, user.study_sets_created
   * API endpoints and server router setup
@@ -166,11 +166,11 @@
 * NavbarStore
 * ClassOptionBox for StudySetForm
 
-## Phase 7: Basic Styling (1day w8d1)
+## Phase 7: Basic Styling (1day w9d1)
 * CSS Styling
 * footer
 
-## Phase 8: add Test feature (2day w8d3)
+## Phase 8: add Test feature (2day w9d3)
 * test_record model
 * Test React component
 * Test Scores
@@ -178,7 +178,7 @@
 
 ## Phase 9: add Search feature (0.5 day)
 
-## Phase 10: Final Touch (1.5day w8d4)
+## Phase 10: Final Touch (1.5day w9d4)
 * thorough styling
 * seed data
 * check for bugs
