@@ -14,6 +14,7 @@
       * SubContent
         * Index
         * **NewStudySetForm**
+          * ClassOptionBox
         * **NewClassForm**
         * **TestScores**
           * TestScoreItem
@@ -30,6 +31,7 @@
     * **StudySet**
       * List
       * **Test**
+        * TestForm
 
 
 ## Routes
@@ -56,7 +58,7 @@
       * Component: Test, Path: /study_set/:id/test
 
 
-## Contents
+## Render Contents
 * App
   * Header
     * Search
@@ -82,18 +84,15 @@
         * Index
           - [ ] Welcome message and navigation tips
         * NewStudySetForm
-          - [ ] delete button
-          - [ ] can add the set to classes
+          * ClassOptionBox: to add the set to Class created by the user
         * NewClassForm
-          - [ ] delete button
-          - [ ] can add existing study sets
         * TestScores
           * TestScoreItem
             - [ ] render test score and link to the study set
         * Class
           - [ ] class title banner
-          - [ ] Link to create new study set for the class (if current_user == teacher)
           - [ ] toggle button to enroll in the class (if user is not the student or teacher)
+          - [ ] delete class button (if user is the teacher)
           * ClassStudySetIndex
             * ClassStudySetIndexItem
               - [ ] render link to the study set
@@ -104,11 +103,14 @@
             * ProgressByStudentItem
               - [ ] render <li>
         * SearchResults
-          * SearchResultItem
-            - [ ] render link to the class/study set
+          * SearchResultItemClass
+            - [ ] render link to the Class
+          * SearchREsultItemStudySet
+            - [ ] render link to the Study Set
 
     * StudySet
       - [ ] Study Set title banner
+      - [ ] delete StudySet button
       - [ ] does not show Navbar (original Quizlet is designed this way)
       - [ ] Back to Index link
       * List

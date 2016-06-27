@@ -18,34 +18,33 @@
 
 * ClassAction
   * fetchSingleClass
-  * receiveSingleClass
+    * receiveSingleClass
   * fetchStudySets
-  * receiveStudySets
+    * receiveStudySets
   * fetchProgressByStudySet
-  * receiveProgresByStudySet
+    * receiveProgresByStudySet
   * fetchProgressByStudent
-  * receiveProgressByStudent
+    * receiveProgressByStudent
   * deleteEnrollment
-    - [ ] DELETE request
-    - [ ] calls fetchStudySets
     - [ ] calls UserAction.fetchNavbarRecords
+    - [ ] calls fetchSingleClass --> this will cause the Class component to re-render with the upated enrollment info.
   * createEnrollment
-    - [ ] POST request
-    - [ ] calls fetchStudySets
     - [ ] calls UserAction.fetchNavbarRecords
+    - [ ] calls fetchSingleClass --> this will cause the Class component to re-render with the upated enrollment info.  
   * createNewClass
-    - [ ] pass callback from View, which display the status of the request
-    - [ ] calls fetchStudySets
     - [ ] calls UserAction.fetchNavbarRecords
-
+  * deleteClass
+    - [ ] calls UserAction.fetchNavbarRecords
 
 * StudySetAction
   * fetchStudySet
-  * receiveStudySet
+    * receiveStudySet
   * createNewStudySet
-    - [ ] pass callback from View, which display the status of the request
     - [ ] calls fetchStudySet
     - [ ] calls UserAction.fetchNavbarRecords
+  * deleteStudySet
+    - [ ] calls fetchStudySet
+    - [ ] calls UserAction.fetchNavbarRecords    
 
 
 * TestAction
@@ -55,10 +54,13 @@
 
 * SearchAction
   * querySearchText
-  * receiveSearchResults
+    * receiveSearchResults
 
 
 # Flux Cycles
+* **This section is incomplete**
+* see [component_details]
+[component_details]: component_details.md
 
 ## Search Cycle
   * user enter search text and submit
@@ -66,23 +68,6 @@
   * SearchAction.receiveSearchResult
   * SearchResultStore receive the new data
   * SearchResults receive the new data, pass it to SearchResultItem
-
-### Search
-  * state: searchText
-  * listens for search submit
-
-### SearchResults
-  * state: searchResults
-  * componentDidMount:
-    * add listener to SearchResultStore
-      * callback: setState with new SearchResults
-  * pass each result item as prop to SearchResultItem
-
-### SearchResultItem
-  * props: result item
-  * render link to class/study Set
-
-
 
 ## Navbar Cycle
   * Navbar mounts
@@ -93,75 +78,33 @@
 
   * when user create/edit study sets or classes, or enroll in new class, it calls UserAction.fetchNavbarRecords
 
-### Navbar
-  * state: NavbarStore.all()
-  * componentDidMount:
-    * call UserAtion.fetchNavbarRecords
-    * addListener to NavbarStore
-      * setState to the new data
-  * pass state to its children as props
 
-### MyCreatedClassesIndex
-  * prop: classes
-  * receiveNewProps:
-    * set new props as instance variable
-  * render links to the classes
-
-### MyCreatedClassesIndex
-  * prop: classes
-  * receiveNewProps:
-    * set new props as instance variable
-  * render links to the classes
-
-### MyStudySetIndex
-  * prop: study sets
-  * receiveNewProps:
-    * set new props as instance variable
-  * render links to the study sets
-
-
-
-
-## Study Set Form Cycle
+## StudySetForm Cycle
   * StudySetAction.createNewStudySet
   * on success
-    * StudySetAction.fetchStudySet & UserAction.fetchNavbarRecord --> see Navbar Cycle
-    * StudySetStore receives new data
-    * StudySetForm redirect to the Study Set page
+    * UserAction.fetchNavbarRecord --> see Navbar Cycle
+    * invoke callback from StudySetForm: redirect to the Study Set page
   * on error
     * user receive error messages
     * user stays on the same page
 
-### StudySetForm
-  * state: form content
-
-  * componentDidMount:
-    * addListener to StudySetStore
-      * callback: redirect to the created page
-  * when calling StudySetAction.createNewStudySet
-    * successCallback: StudyAction.fetchStudySet
-    * errorCalback: display error message
 
 
-## Class Form Cycle
+## ClassForm Cycle
   * ClassAction.createNewClass
-  * upon success
-    * ClassAction.fetchClass & UserAction.fetchNavbarRecord --> see Navbar Cycle
-    * ClassStudySetStore receives new data
-    * ClassForm redirect to the ClassIndex page
-  * upon error
+  * on success
+    * UserAction.fetchNavbarRecord --> see Navbar Cycle
+    * invoke callback from ClassForm: redirect to the Study Set page
+  * on error
     * user receive error messages
     * user stays on the same page
 
-### ClassForm
-  * state: form content
-  * componentDidMount:
-    * addListener to ClassStudySetsStore
-      * callback: redirect to the created page
-  * when calling ClassAction.createNewClass
-    * successCallback: ClassAction.fetchClassStudySets
-    * errorCalback: display error message
 
+## DeleteClass Cycle
+
+## DeleteStudySet Cycle
+### StudySet
+  * same flow as DeleteClass
 
 
 ## StudySet Cycle
@@ -170,22 +113,7 @@
   * StudySetStore receives data
   * StudySet receives the new data
 
-### StudySet
-  * state:
-    * Study Set info
-    * words
-  * componentDidMount:
-    * StudySetAction.fetchStudySets
-    * Add Lister to StudySetStore
-      * callback: setState
-  * pass state.words to children as props
-### List
-  receive words as props
-  render list
 
-## Test
-  receive words as props
-  generate test
 
 
 ## Test Submission Cycle
@@ -194,55 +122,16 @@
       * Test.showScore
       * TestAction.submitTest (no Dispatcher action)
         * callback: alert the request status
-### Test
-  * componentDidMount:
-    * add event listener to test form on submit
-  * pass callback to TestAction.submitTest
+
+## Class Cycle
 
 
-# Class
-  * state: classStore
-  * componentDidMount:
-    * ClassAction.fetchSingleClass
-    * Add Listener to ClassStore
-  * add event listener on enrollment button
-    * callback: toggleEnrollment
-      * current_user is enrolled in class --> ClassAction.deleteEnrollment
-      * current_user is not enrolled in class --> ClassAction.createEnrollment
-
-
-
-## ClassStudyIndex Cycles
+## ClassStudyIndex Cycle
   * ClassStudySetIndex mounts
   * ClassAction.fetchStudySets
   * ClassAction.receiveStudySets
   * ClassStudySetStore receives data
-  * StudySetIndex rest its state
-
-### StudySetIndex
-  * componentDidMount:
-    * add listener to ClassStudyStore
-      * setState
-    * ClassAction.fetchStudySets
-  * pass study sets as props to StudySetIndexItem
-
-### StudySetIndexItem
-  props: StudySet item
-  render link to the Study Set
-
-
-## ProgressByStudySet Cycle
-  * same flow as ClassStudySet Cycle
-
-## ProgressByStudent Cycle
-  * same flow as ClassStudySet Cycle
+  * StudySetIndex reset its state
 
 
 ## TestScore Cycle
-
-### TestScores
-  * state: TestScoreStore.all()
-  * componentDidMount:
-    * UserActon.fetchTestScores
-    * addListener to TestScoreStore
-      * callback: setState with new TestScoreStore.all()

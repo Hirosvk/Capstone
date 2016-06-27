@@ -51,14 +51,16 @@
 - [ ] **Bonus**
   - [ ] Users can edit their classes
   - [ ] Users can edit their study sets
-
   - [ ] Flashcard feature for Study Sets
-    - [ ] Users can study one pair vocabularies at a time
+  - [ ] Add language tags to Study Sets and Class belong
+    - [ ] users can choose one language to tag the study set/class when creating/editing
+  - [ ] App tracks which Study Sets the user has studied
+    - [ ] logged-in users can see Recently Studied Sets
 
+- [ ] **Super Bonus**
   - [ ] Users can customizable Test
 
   - [ ] Recent Activities page
-  - [ ] App tracks which Study Sets the user has studied
 
   - [ ] Add more features to Study Sets
     - [ ] Users set their study sets as private

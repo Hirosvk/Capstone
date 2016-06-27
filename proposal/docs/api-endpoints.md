@@ -1,21 +1,21 @@
 # html API
 ## Root
-* GET /
+### GET /
   * static_page loads React App
 
 ## user
-* GET /user/new
+### GET /user/new
   * sign-in page
-* POST /user
+### POST /user
   * create new user
 
 ## session
-* GET /session/new
+### GET /session/new
   * log-in page
-* POST /session/
+### POST /session/
   * log-in
   * redirects to GET /
-* DELETE /session/
+### DELETE /session/
   * log-out
   * redirects to GET /
 
@@ -27,11 +27,13 @@
 * return names and id's of...
   * klasses enrolled by the current_user
   * klasses created by the current_user
-  * study sets created by the current_user
+  * study_sets created by the current_user
 ### GET /api/user/test_scores
 * return test scores of the current_user
 
 ## klasses
+### GET /api/klasses/;id
+  * return klass info (id, name, description, teacher's username, created_at, current_user's enrollment status, and enrollment_id)
 ### GET /api/klasses/:id/study_sets
   * return Study Sets of the Klass (name, id)
 ### GET /api/klasses/:id/by_study_set
@@ -40,28 +42,42 @@
 ### GET /api/klasses/:id/by_student
   * return test scores grouped by student
     * require current_user == teacher
-    * toggle enrollment status
-* create new klass
-  * require log-in
+### POST /api/klasses/new
+  * create new klass with current_user.id as teacher_id
+  * params: klass_name, description, class_ids
+    * require log-in
 
-
-### DELETE /api/klassses/:id/enrollment
+## enrollments
+### DELETE /api/enrollments/:id
   * delete a row from enrollments table
     * require log-in && current_user != teacher
-### POST /api/klasses/:id/enrollment
-  * create new row in enrollments table
+### POST /api/enrollments/
+  * create new row in enrollments table with current_user_id
+  * params: class_id
     * require log-in && current_user != teacher
 
 
 ## study_sets
-* return single Study Set
-* return all the words of the Study Set
-* create new study_set
-  * require log-in
+### GET /api/study_sets/
+  * return StudySets created by all users
+### GET /api/study_sets/:id
+  * return single Study Set (name, creator's username, created_at, updated_at)
+  * return all the words of the Study Set in a nested hash
+### DELETE /api/study_sets/:id
+  * delete the study set
+    * require current_user == creator
+### POST /api/study_sets/
+  * create new study_set with current_user.id as creator_id
+  * create new words
+  * params: study_set_name, klass_ids as array, words as a hash map(key: word_english, val: word_foreign)
+    * require log-in
 
 ## test_records
-* submit test score (create new test_record)
+### POST /api/test_records
+* submit test score (create new test_record) with current_user.id as user_id
+* params: study_set_id, score
   * require log-in
 
 ## search
-* query search text in DB for language, study_set name, word, and class, and return results
+### GET /api/search?=[search_text]
+* query search_text in DB for study_set_name, word, and class_name, and return results grouped by study set and class
