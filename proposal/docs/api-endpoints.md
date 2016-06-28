@@ -3,12 +3,9 @@
 ### GET /
   * static_page loads React App
 
-## user
-### GET /user/new
-  * sign-in page
+# JSON API
 
-### POST /user
-  * create new user
+## users
 
 ## session
 ### GET /session/new
@@ -16,24 +13,28 @@
 
 ### POST /session/
   * log-in
-  * redirects to GET /
-  
+
 ### DELETE /session/
   * log-out
-  * redirects to GET /
 
 
-# JSON API
+### POST /api/user/
+* signup
+  * login user
+  * return currentUser on success
+  * return full error messages on failure
 
-## users
-### GET /api/user/navbar_data
+### GET /api/user/
+* require_current_user
 * return names and id's of...
   * klasses enrolled by the current_user
   * klasses created by the current_user
   * study_sets created by the current_user
 
 ### GET /api/user/test_scores
+* require_current_user
 * return test scores of the current_user
+
 
 ## klasses
 ### GET /api/klasses/;id

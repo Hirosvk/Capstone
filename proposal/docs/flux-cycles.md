@@ -7,9 +7,20 @@
 * ProgressByStudentStore
 * StudySetStore
 * TestScoreStore
+* CurrentUserStore
+* ErrorStore
+
 
 
 # Actions
+
+* SessionAction
+  * signup
+  * login
+  * logout
+  * receiveCurrentUser
+  * passError
+
 * UserAction
  * fetchNavbarRecords
  * receiveNavbarRecords

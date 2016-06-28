@@ -33,10 +33,12 @@
     - [ ] Study Sets they created
     - [ ] Study Sets they previously studied
   - [ ] When logged-out, users can:
-    - [ ] search for classes and study sets
-    - [ ] use all Study Sets features
-    - [ ] not create new Study Sets or Classes
-    - [ ] not enroll in Classes
+    - [ ] not have access to following pages
+      - [ ] Navbar
+      - [ ] StudySetForm
+      - [ ] ClassForm
+      - [ ] MyTestScore
+    - [ ] not enroll in Classes (no enroll button)
     - [ ] not save their Test scores or study history
 
 

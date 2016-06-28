@@ -1,4 +1,34 @@
 
+## LoginForm
+* addEventListner onSubmit
+  * SessionAction.login
+* addListener to CurrentUserStore
+  * redirect to root on successful login
+  * fetch error messages from ErrorStore on failure
+* componentWillUnmount
+
+## SignupForm
+* addEventListner onSubmit
+  * SessionAction.login
+* addListener to CurrentUserStore
+  * redirect to root on successful login
+  * fetch error messages from ErrorStore on failure
+* componentWillUnmount
+
+
+## Header
+* state: currentUser
+* addListener on currentUserStore
+  * setState with the new status --> render
+* render
+  * if currentUser exists
+    * display username & logout button
+  * else
+    * login & signup button
+  * add event listener to the buttons
+    * redirect to respective pages & request
+
+
 ## Search
 * state: searchText
 * add event listener onChange
@@ -20,8 +50,13 @@
 * render link to class/study Set
 
 
+## Content
+* state: currentUser
+* if currentUser is true, render Navbar
+
 ## Navbar
-  * state: NavbarStore.all()
+  * state:
+    * userRecords: NavbarStore.all()
   * componentDidMount:
     * call UserAtion.fetchNavbarRecords
     * addListener to NavbarStore
@@ -55,6 +90,7 @@
       * callback: setState with new TestScoreStore.all()
   * pass each test score item as props to TestScoreItem
   * componentWillUnmount
+
 ### TestScoreItem
   * props: test score item
   * render test score and link to the study Set
@@ -62,15 +98,16 @@
 
 
 ## StudySetForm
-  * state: form content
+  * state:
+    * form content
   * add event listener onChange
-    * setState to the new values
+    * setState to the new values <-- not sure if it's necessary
   * add event listener onSubmit
     * preventDefault
     * StudySetAction.createNewStudySet
       * successCallback: redirect to the new Study Set
       * errorCalback: display error message
-  * on render, pass a function to ClassOptionBox
+  * render, pass a function to ClassOptionBox
     * this function update state.class_ids
 ## ClassOptionBox
   * props: callback function from StudySetForm
@@ -122,7 +159,7 @@
     * setState with new values
   * add event listener to test form on submit
     * gradeTest
-      * TestAction.submitTest
+      * TestAction.submitTest (if currentUser is true)
         * callback: alert submission status
 
 ## Class Cycle
